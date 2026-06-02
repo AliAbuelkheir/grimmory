@@ -1,13 +1,14 @@
 <ng-container *transloco="let t; prefix: 'bookdrop.filesWidget'">
+@let currentSummary = summary();
 <div class="staging-border">
   <div class="widget-row">
 
     <div class="widget-info">
       <p class="widget-title">{{ t('title') }}</p>
-      <p class="widget-count">{{ summary().pendingCount }}</p>
-      @if (summary().lastUpdatedAt) {
+      <p class="widget-count">{{ currentSummary.pendingCount }}</p>
+      @if (currentSummary.lastUpdatedAt) {
         <p class="widget-date">
-          {{ t('lastUpdated') }} {{ summary().lastUpdatedAt | date: 'short' }}
+          {{ t('lastUpdated') }} {{ currentSummary.lastUpdatedAt | date: 'short' }}
         </p>
       }
     </div>

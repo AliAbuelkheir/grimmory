@@ -1,4 +1,4 @@
-import {Component, inject} from '@angular/core';
+import {ChangeDetectionStrategy, Component, inject} from '@angular/core';
 import {toSignal} from '@angular/core/rxjs-interop';
 import {BookdropFileService} from '../../service/bookdrop-file.service';
 import {DatePipe} from '@angular/common';
@@ -11,6 +11,7 @@ import {TranslocoDirective} from '@jsverse/transloco';
   standalone: true,
   templateUrl: './bookdrop-files-widget.component.html',
   styleUrl: './bookdrop-files-widget.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [
     DatePipe,
     Button,
